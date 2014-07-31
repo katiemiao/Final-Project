@@ -1,0 +1,8 @@
+require_relative 'Mailgun_final_project.rb'
+
+
+task :send_weather do 
+  #send my email with my tweet
+  Mail = Mail.new
+  Mail.
+end
