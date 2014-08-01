@@ -1,7 +1,4 @@
-  require 'rubygems' # not necessary with ruby 1.9 but included for completeness
-  require 'twilio-ruby'
-  require 'nokogiri'
-  require 'open-uri'
+require 'open-uri'
 
 class Weather
   attr_reader :right_now_temperature, 
