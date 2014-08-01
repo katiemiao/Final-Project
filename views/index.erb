@@ -1,19 +1,27 @@
-<h1> Weather </h1>
+<link rel="stylesheet" type="text/css" href="../public/css/style.css">
+<head>
+  <title>Weather</title>
+  <h1>Weather</h1>
+</head>
 
-<%=@weather_today.right_now_temperature %>
+<body>
+  <div class="Right_Now">
+    <h3>The temperature is: <%=@weather_today.right_now_temperature%></h3>
+    <h3>The forecast is: <%=@weather_today.right_now_forecast %></h3>
+    <h3>In the past 24 hours the precipitation was: <%=@weather_today.past_24_hr_precipitation %></h3>
+  </div>
 
-<%=@weather_today.right_now_forecast %>
+  <div class="Today">
+    <h3>Today the high will be: <%=@weather_today.today_temperature %></h3>
+    <h3>Today the forecast will be: <%=@weather_today.today_forecast %></h3>
+    <h3>Today the chance of rain is: <%=@weather_today.today_rain %></h3>
+  </div>
 
-<%=@weather_today.past_24_hr_precipitation %>
+  <div class="Tonight">
+    <h3>Tonight the low will be: <%=@weather_today.tonight_temperature %></h3>
+    <h3>Tonight the forecast will be:<%=@weather_today.tonight_forecast %></h3>
+    <h3>Tonight the chance of rain is:<%=@weather_today.tonight_rain %></h3>
+  </div>
+</body>
 
-<%=@weather_today.today_temperature %>
 
-<%=@weather_today.today_forecast %>
-
-<%=@weather_today.today_rain %>
-
-<%=@weather_today.tonight_temperature %>
-
-<%=@weather_today.tonight_forecast %>
-
-<%=@weather_today.tonight_rain %>
