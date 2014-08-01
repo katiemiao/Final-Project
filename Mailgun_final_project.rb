@@ -51,15 +51,15 @@ class Mail
     parameters = {
       :to => "katiemiao61@gmail.com",
       :subject => "Weather",
-      :text => "Right Now's Temperature: #{today.right_now_temperature}
-Right Now's Forecast: #{today.right_now_forecast}
+      :text => "Now's Temperature: #{today.right_now_temperature}
+Now's Forecast: #{today.right_now_forecast}
 Past 24 hr Precipitation: #{today.past_24_hr_precipitation}
 
-Today's Temperature: #{today.today_temperature}
+Today's High: #{today.today_temperature}
 Today's Forecast: #{today.today_forecast}
 Today's Chance of Rain: #{today.today_rain}
 
-Tonight's Temperature: #{today.tonight_temperature}
+Tonight's Low: #{today.tonight_temperature}
 Tonight's Forecast: #{today.tonight_forecast}
 Tonight's Chance of Rain: #{today.tonight_rain}
 ",
@@ -72,8 +72,3 @@ end
 
 #Mail.new
 
-#Rakefile
-# require_relative 'Mailgun_final_project.rb'
-# task :send_weather do
-  # mail = Mail.new
-# end
