@@ -1,5 +1,5 @@
-require_relative 'twilio_final_project.rb'
-require_relative 'Mailgun_final_project.rb'
+require_relative 'lib/twilio_final_project.rb'
+require_relative 'lib/Mailgun_final_project.rb'
 
 
 task :send_weather do
