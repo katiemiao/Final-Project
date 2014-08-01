@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
+
 <head>
   <title>Weather</title>
   <h1>Weather</h1>
@@ -11,6 +12,7 @@
     <h3>The current forecast is: <%=@weather_today.right_now_forecast %></h3>
     <h3>In the past 24 hours the precipitation was: <%=@weather_today.past_24_hr_precipitation %></h3>
   </div>
+
 
   <div class="Today">
     <h3>Today the high will be: <%=@weather_today.today_temperature %></h3>
@@ -25,6 +27,11 @@
   </div>
 
   <img class="sun" src="http://www.clker.com/cliparts/9/Z/3/E/N/K/sun-hi.png">
+
+  <div class="Link">
+      <a href="http://www.weather.com/weather/today/Greenwich+CT+USCT0085:1:US">Weather.com</a>
+  </div>
+
 </body>
 
 

@@ -18,7 +18,7 @@ body {
 .Right_Now {
   background-color: #89E1EC;
   opacity:0.6;
-  width: 400px;
+  width: 415px;
   position: relative;
   left:425px;
   top:-30px;
@@ -30,7 +30,7 @@ body {
 .Today {
   background-color: #89E1EC;
   opacity:0.6;
-  width: 400px;
+  width: 415px;
   position: relative;
   left:425px;
   top:-5;
@@ -42,7 +42,7 @@ body {
 .Tonight {
   background-color: #89E1EC;
   opacity: 0.6;
-  width: 400px;
+  width: 415px;
   position: relative;
   left:425px;
   top:20px;
@@ -57,4 +57,19 @@ body {
   position: relative;
   top:-575px;
   left:-430px;
+}
+
+.link {
+  background-color: #89E1EC;
+  opacity: 0.6;
+  width:115px;
+  text-align: center;
+  border-style: solid;
+  border-color: #052EF6;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1em;
+ /* position: relative;
+  top:;*/
+
 }

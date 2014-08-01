@@ -7,4 +7,4 @@ require './lib/twilio_final_project.rb'
 get '/' do
   @weather_today = Weather.new
   erb :index #this tells your program to use the html associated with the index.html.erb file in your browser
-end 
+end   
