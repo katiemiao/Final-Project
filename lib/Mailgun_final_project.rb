@@ -1,6 +1,4 @@
 # Initialize your Mailgun object:
-  require 'Mailgun'
-  require 'nokogiri'
   require 'open-uri'
 
 class Weather
