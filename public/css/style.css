@@ -1,10 +1,63 @@
+@import url(http://fonts.googleapis.com/css?family=Dancing+Script);
+ /*font-family: 'Dancing Script', cursive;*/
+@import url(http://fonts.googleapis.com/css?family=Fredericka+the+Great);
 
 h1 {
   text-align: center;
+  color: white;
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 5em
+
 }
 
 body {
-  background-image: url();
+  background-image: url(http://static.tumblr.com/c55afc43ab6366a6c19532d61fdb9478/i5hduzl/QVLn28yae/tumblr_static_cloud-background.jpg);
   text-align: center;
 }
+
+.Right_Now {
+  background-color: #89E1EC;
+  opacity:0.6;
+  width: 400px;
+  position: relative;
+  left:425px;
+  top:-30px;
+  border-style: solid;
+  border-color: #052EF6;
+  border-radius: 5px;
+}
+
+.Today {
+  background-color: #89E1EC;
+  opacity:0.6;
+  width: 400px;
+  position: relative;
+  left:425px;
+  top:-5;
+  border-style: solid;
+  border-color: #052EF6;
+  border-radius: 5px;
+}
+
+.Tonight {
+  background-color: #89E1EC;
+  opacity: 0.6;
+  width: 400px;
+  position: relative;
+  left:425px;
+  top:20px;
+  border-style: solid;
+  border-color: #052EF6;
+  border-radius: 5px;
+}
+
+.sun {
+  height: 250px;
+  width: 250px;
+  position: relative;
+  top:-575px;
+  left:-430px;
+}
+
+
 

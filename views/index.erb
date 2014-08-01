@@ -1,10 +1,11 @@
-<link rel="stylesheet" type="text/css" href="../public/css/style.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <head>
   <title>Weather</title>
   <h1>Weather</h1>
 </head>
 
 <body>
+
   <div class="Right_Now">
     <h3>The temperature is: <%=@weather_today.right_now_temperature%></h3>
     <h3>The forecast is: <%=@weather_today.right_now_forecast %></h3>
@@ -19,9 +20,11 @@
 
   <div class="Tonight">
     <h3>Tonight the low will be: <%=@weather_today.tonight_temperature %></h3>
-    <h3>Tonight the forecast will be:<%=@weather_today.tonight_forecast %></h3>
-    <h3>Tonight the chance of rain is:<%=@weather_today.tonight_rain %></h3>
+    <h3>Tonight the forecast will be: <%=@weather_today.tonight_forecast %></h3>
+    <h3>Tonight the chance of rain is: <%=@weather_today.tonight_rain %></h3>
   </div>
+
+  <img class="sun" src="http://www.clker.com/cliparts/9/Z/3/E/N/K/sun-hi.png">
 </body>
 
 
