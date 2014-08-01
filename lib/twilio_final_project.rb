@@ -1,4 +1,5 @@
 require 'open-uri'
+require 'twilio-ruby'
 
 class Weather
   attr_reader :right_now_temperature, 
