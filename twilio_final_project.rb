@@ -3,56 +3,67 @@
   require 'nokogiri'
   require 'open-uri'
 
-  html = 'http://www.weather.com/weather/today/USCT0085:1'
+class Weather
+  attr_reader :right_now_temperature, 
+  :right_now_forecast, 
+  :past_24_hr_precipitation, 
+  :today_temperature, 
+  :today_forecast, 
+  :today_rain, 
+  :tonight_temperature, 
+  :tonight_forecast, 
+  :tonight_rain
 
-  doc = Nokogiri::HTML(open(html))
+  def initialize
+    html = 'http://www.weather.com/weather/today/USCT0085:1'
 
-  Right_Now_Temperature = doc.css('.wx-temperature').children.children.first.text
-  Right_Now_Forecast = doc.css('.wx-phrase').children.first.text
-  Past_24_hr_Precipitation = doc.css('.wx-data').children.first.text
+    doc = Nokogiri::HTML(open(html))
 
-  Today_Temperature = doc.css('.wx-temperature').children[2].text
-  Today_Forecast = doc.css('.wx-phrase').children[1].text
-  Today_Rain = doc.css('.wx-data').children[2].text
+    @right_now_temperature = doc.css('.wx-temperature').children.children.first.text
+    @right_now_forecast = doc.css('.wx-phrase').children.first.text
+    @past_24_hr_precipitation = doc.css('.wx-data').children.first.text
 
-  Tonight_Temperature = doc.css('.wx-temperature').children[4].text
-  Tonight_Forecast = doc.css('.wx-phrase').children[2].text
-  Tonight_Rain = doc.css('.wx-data').children[4].text
+    @today_temperature = doc.css('.wx-temperature').children[2].text
+    @today_forecast = doc.css('.wx-phrase').children[1].text
+    @today_rain = doc.css('.wx-data').children[2].text
+
+    @tonight_temperature = doc.css('.wx-temperature').children[4].text
+    @tonight_forecast = doc.css('.wx-phrase').children[2].text
+    @tonight_rain = doc.css('.wx-data').children[4].text
+  end
+end
+
 
 class Text
 
-  def initialize(receiver, message)
-    @receiver=receiver
-    @message=message
+  def initialize(receiver)
+    today = Weather.new
+    @receiver = receiver
+
   # put your own credentials here
-  account_sid = 'ACe330ba04d082392df4cb3511dcb72cec'
-  auth_token = '2008ea097713e401a16c54029058da82'
+    account_sid = 'ACe330ba04d082392df4cb3511dcb72cec'
+    auth_token = '2008ea097713e401a16c54029058da82'
 
-  # set up a client to talk to the Twilio REST API
-  @client = Twilio::REST::Client.new account_sid, auth_token
+    # set up a client to talk to the Twilio REST API
+    @client = Twilio::REST::Client.new account_sid, auth_token
 
-  @client.account.messages.create(
-    :from => '+18152642023',
-    :to => @receiver,
-    :body => @message
-  )
+    @client.account.messages.create(
+      :from => '+18152642023',
+      :to => @receiver,
+      :body => "Now's Temperature: #{today.right_now_temperature}
+Now's Forecast: #{today.right_now_forecast}
+Past 24 hr Precipitation: #{today.past_24_hr_precipitation}
+
+Today's High: #{today.today_temperature}
+Today's Forecast: #{today.today_forecast}
+Today's Chance of Rain: #{today.today_rain}
+
+Tonight's Low: #{today.tonight_temperature}
+Tonight's Forecast: #{today.tonight_forecast}
+Tonight's Chance of Rain: #{today.tonight_rain}
+")
   end
 
 end
 
-Text.new("+12039188371", "Right Now's Temperature: #{Right_Now_Temperature}
-Right Now's Forecast: #{Right_Now_Forecast}
-Past 24 hr Precipitation: #{Past_24_hr_Precipitation}
-
-Today's Temperature: #{Today_Temperature}
-Today's Forecast: #{Today_Forecast}
-Today's Chance of Rain: #{Today_Rain}
-
-Tonight's Temperature: #{Tonight_Temperature}
-Tonight's Forecast: #{Tonight_Forecast}
-Tonight's Chance of Rain: #{Tonight_Rain}
-")
-
-
-
-
+# Text.new("+12039188371")
